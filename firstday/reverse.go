@@ -2,18 +2,27 @@ package main
 
 import (
 	"fmt"
-	"strings"
 )
 
 func reverseSlice(word string) string {
-	strings.Fields(word)
+	result := ""
 
-	for i := 0; i < len(word)-1; i-- {
-		return ""
+	for i := len(word) - 1; i >= 0; i-- {
+		result += string(word[i])
 	}
-	return ""
+	return result
+}
+
+func reverseStrings(word string) string {
+	runes := []rune(word)
+
+	for i, j := 0, len(runes)-1; i < j; i, j = i+1, j-1 {
+		runes[i], runes[j] = runes[j], runes[i]
+	}
+	return string(runes)
 }
 
 func main() {
-	fmt.Println(reverseSlice("excel"))
+	fmt.Println(reverseSlice("excel is very cool"))
+	fmt.Println(reverseStrings("Excel meyanga"))
 }
