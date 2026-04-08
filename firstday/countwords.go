@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 func countWords(word string) int {
 	count := 0
 
@@ -11,8 +7,4 @@ func countWords(word string) int {
 		count++
 	}
 	return count
-}
-
-func main() {
-	fmt.Println(countWords("hello"))
 }
