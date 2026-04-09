@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 func reverseSlice(word string) string {
 	result := ""
 
@@ -20,9 +16,4 @@ func reverseStrings(word string) string {
 		runes[i], runes[j] = runes[j], runes[i]
 	}
 	return string(runes)
-}
-
-func main() {
-	fmt.Println(reverseSlice("excel is very cool"))
-	fmt.Println(reverseStrings("Excel meyanga"))
 }
