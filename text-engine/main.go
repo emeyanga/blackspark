@@ -1,6 +1,5 @@
 package main
 
-/*
 import (
 	"fmt"
 	"os"
@@ -21,10 +20,11 @@ func main() {
 		panic(err)
 	}
 
-	result := tokenizer.Tokenize(string(content))
+	result := string(content)
+
+	result = tokenizer.Tokenize(result)
 
 	if err = os.WriteFile(outputFile, []byte(result), 0644); err != nil {
 		fmt.Println("Failed to write file!!!", err)
 	}
 }
-*/

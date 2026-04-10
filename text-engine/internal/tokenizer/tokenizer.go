@@ -1,10 +1,11 @@
 package tokenizer
 
 import (
+	"strings"
 	"unicode"
 )
 
-func Tokenize(s string) []string {
+func Tokenize(s string) string {
 	runes := []rune(s)
 	var buffer []rune
 	var token []string
@@ -20,12 +21,18 @@ func Tokenize(s string) []string {
 			if unicode.IsSpace(r) {
 				continue
 			} else {
-				token = append(token, string(buffer))
+				if r == '.' || r == ',' || r == ';' || r == ':' || r == '!' || r == '-' || r == '?' {
+					token = append(token, string(r))
+				}
 			}
 		}
 	}
 	if len(buffer) > 0 {
 		token = append(token, string(buffer))
 	}
-	return token
+	return JoinTokens(token)
+}
+
+func JoinTokens(token []string) string {
+	return strings.Join(token, "")
 }
